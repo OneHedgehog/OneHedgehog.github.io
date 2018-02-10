@@ -1,0 +1,689 @@
+@import "bourbon"
+@import "fonts"
+@import "libs"
+@import "vars"
+
+@charset "utf-8"
+
+*::-webkit-input-placeholder
+	color: #343e5c
+	opacity: 1
+
+*:-moz-placeholder
+	color: #343e5c
+	opacity: 1
+
+*::-moz-placeholder
+	color: #343e5c
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #343e5c
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 12px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+/*user styles*/
+
+/*header--------------------------------*/
+.header
+	.navbar-default
+		background: transparent
+		border: none
+	.navbar-default:nth-of-type(1)
+		margin-top: 30px
+	#responsive-menu ul li a
+		color: #343e5c
+	.navbar-nav + .navbar-right 
+		.cases
+			background: #e3e8f0
+			padding: 8px 12px
+			border-radius: 50%
+		img
+			padding: 0 5px
+		li:nth-of-type(2)
+			display: block
+			width: 84px
+			height: 31px
+			border: 2px solid #e3e8f0
+			border-radius: 25px
+			margin-top: 10px
+			position: relative
+			&:hover
+				background: #e3e8f0
+			a
+				line-height: 0px
+	.nav-tabs
+		padding-top: 24px
+		margin-top: 30px
+		border-bottom: none
+		border-top: 1px solid #f0f2f7
+		a
+			font-size: 11px
+			color: #b9bed1
+			&:hover
+				background: none
+				border: none
+				color: $default-color
+		form
+			a
+				margin-right: 20px
+			input
+				font-size: 13px
+				border: none
+				box-shadow: none
+
+			button
+				border: none
+/*header end--------------------------------*/
+
+/*Banner--------------------------------*/
+.main 
+	.banner
+		.carousel
+			.carousel-control
+				span:before
+					border: solid 2px #46474c
+					border-radius: 50%
+					padding: 14px 16px
+			.carousel-inner
+				.item
+					background: #1c1e23
+					.carousel-caption
+						position: relative
+						text-align: left
+						h1
+							font-size: 43px
+							font-family: Montserrat-Black
+							padding-top: 103px
+						p
+							font-size: 16px
+							color: #d3d3d4
+							font-family: CrimsonText-Roman
+						button
+							font-family: $default-font
+							background: #2754eb
+							border: none
+							padding: 17px 53px
+							border-radius: 2*17px
+							font-size: 11px
+							margin-top: 64px
+							outline: none
+	.mainContent
+		background: #e4e5e7
+		padding-bottom: 50px
+
+/*Banner end----------------------------*/
+
+/*Sort nav start-------------------------*/
+.main
+	.sortNav/*1st item of sort Nav*/
+		margin-top: 49px
+		background: #fff
+		min-height: 56px
+		@extend %borderRad
+		padding: 13px 0px 
+		font-size: 11px
+		.simpleText
+			color: #a1a8bd
+			font-size: 11px
+		input
+			background: #f0f2f7
+			border-radius: 30px
+			outline: none
+			box-shadow: none
+			border: 1px  solid #e4e9f0
+			padding: 13px 0px
+			padding: 0 10px
+			height: 30px
+			&:focus
+				border: solid 1px #00e2aa
+			&[value]
+				width: (160-10*2)px
+			&[placeholder]
+				width: 59px
+				font-size: 11px
+				font-family: $default-font
+		.glyphicon-ok
+			background: #00e2aa
+			padding: 7px
+			color: #fff
+			border-radius: 50%
+			margin: 0 4px
+			cursor: pointer
+			font-size: 11px
+		.align
+			margin-top: 5px
+		.dropdown-toggle
+			cursor: pointer 
+		.dropdown-menu>li>a 
+			font-size: 13px
+	.filtersNav/*filtersNav item of sort Nav*/
+		background: #fff
+		@extend %borderRad
+		margin-bottom: 30px
+		margin-top: 49px
+		span
+			float: right
+			color: #b8bfd3
+		li
+			border-bottom: 1px solid #f0f2f7
+			a
+				color: #343e5c
+	.availableFilter
+		background: #fff
+		min-height: 360px
+		@extend %borderRad
+		margin-top: 49px
+		span:nth-of-type(2)
+			border-top: 1px solid #f0f2f7
+	.availableFilter, .usableFilter, .deliveryFilter	
+		span
+			font-size: 11px
+			color: #343e5c
+			padding: 20px
+			display: inline-block
+			width: 100%
+			border-bottom: 1px solid #f0f2f7
+			margin-bottom: 12px
+			a
+				float: right
+				border-bottom: 2px solid #fff
+				&:hover
+					text-decoration: none
+					border-bottom: 2px solid #d7dcfa
+		ul
+			list-style-type: none
+			padding: 0
+			margin: 0
+			li
+				padding: 3px 20px 
+				margin: 0 auto
+				i
+					float: right
+					color: #c1c7d9
+				label
+					display: inline-block
+					cursor: pointer
+					position: relative
+					vertical-align: top
+					margin-left: 22px
+				input
+					display: none
+				.radio:before
+					content: ''
+					display: inline-block
+					width: 16px
+					height: 16px
+					position: absolute
+					border-radius: 50%
+					border: 2px solid #e5e9f0
+					left: -22px
+					top: 2px
+				input[type='radio']:checked + label:before
+					content: '\2022'
+					color: #00deea
+					text-align: center
+					line-height: 5px
+					font-size: 40px
+				.check:before
+					content: ''
+					width: 16px
+					height: 16px
+					background: #fff
+					border: 2px solid #c1c7d9
+					position: absolute
+					left: -22px
+					border-radius: 3px
+					bottom: 3px
+				input[type='checkbox']:checked + label:before
+					content: '✔'
+					color: #fff
+					background: #00e2aa
+					border: 2px solid #00e2aa
+					text-align: center
+					line-height: 14px
+			.deliveryLi
+				width: 49%
+				float: left
+				margin-top: -20px
+
+	.usableFilter
+		background: #fff
+		@extend %borderRad
+		margin-top: 49px
+		min-height: 250px
+	.deliveryFilter
+		background: #fff
+		@extend %borderRad
+		min-height: 98px
+		margin-top: 32px
+		//for adaptive margin-top: 450px
+
+	.Content
+		min-height: 20px
+		margin-top: 49px
+		min-height: 1607px
+		ul
+			padding: 0
+			margin: 0
+			li
+				list-style-type: none
+				float: left
+				margin-left: 30px
+				margin-bottom: 30px
+				overflow: hidden
+				a
+					height: 380px
+					width: 254px
+					display: block
+					text-align: center
+					position: relative
+					background: #fff
+					@extend %borderRad
+					img
+						display: block
+						margin: 0 auto
+						position: relative
+						top: 52px
+					span, p
+						position: relative
+						top: 114px
+					span
+						color: #1c1e23
+						font-size: 16px
+					p
+						font-size: 12px
+						color: #b8bfd3
+					i
+						font-size: 14px
+						color: #343e5c
+				a:hover
+					text-decoration: none
+			.TopItem
+				a
+					width: 254px*2 + 30px
+					background-repeat: no-repeat
+					background-position: center 0
+					text-align: left
+					i
+						color: #fff
+						font-size: 12px
+						background: #1c1e23
+						padding: 5px 10px
+						@extend %borderRad
+						float: left
+						margin: 11px
+					p.TopItemTxt
+						width: 90%
+						margin: 0px auto
+						padding-top: 200px
+						height: 20px
+						span
+							top: 0
+						.buttons
+							float: right
+							font-size: 11px
+							margin-top: 20px
+							z-index: 1000
+							font-weight: 100
+							b
+								margin: 0
+								padding: 12px 20px
+								border: 1px solid #f0f2f7
+								&:nth-of-type(1)
+									border-radius: 20px 0 0 20px
+								&:nth-of-type(2)
+									border-radius: 0 20px 20px 0
+			.ItemClass2
+				a
+					background-position: center center
+					@extend %borderRad
+					span
+						top: 40px
+						padding: 0 0 15px 15px
+					p
+						top: 40px
+						i
+							color: #6d6b68
+							
+					
+	.paginations
+		background: #fff
+		width: 100%
+		height: 90px
+		text-align: center
+		overflow: hidden
+		@extend %borderRad
+		a:first-child
+			float: left
+			@extend %margin
+
+
+		a:last-child
+			float: right
+			@extend %margin
+		a
+			color: #3a405b
+			font-size: 14px
+			text-decoration: none
+			padding:  0 10px
+		.glyphicon:hover
+			opacity: .7
+			
+		ul
+
+		 width: 70%
+		 display: inline-block
+		 a:hover, .activePage
+		 	color: #b9bed1
+		 	border-radius: 50%
+		 	box-shadow: 0px 6px 14px 0px 
+		li
+			list-style-type: none
+			float: left
+			padding: 0 20px
+	.Best-Sellers
+		background: #fff
+		min-height: 396px
+		text-align: center
+		color: #343e5c
+		margin-top: 50px
+		@extend %borderRad
+		h4
+			display: block
+			padding: 24px 0
+			border-bottom: 2px solid #f0f2f7
+			margin-bottom: 14px;
+		li
+			overflow: hidden
+			list-style-type: none
+			width: 25%
+			float: left
+			border-left: 2px solid #f0f2f7
+			img
+				display: block
+				margin: 41px auto
+		a h5
+			font-size: 16px
+			color: #343e5c
+		a span
+			color: #a1a8bd
+		p>span
+			padding: 0 10px
+			&:nth-of-type(1)
+				display: inline-block
+				text-decoration: line-through
+			&:nth-of-type(2)
+				color: #343e5c
+				span
+					color: #343e5c
+		a
+			width: 100%
+			height: 100%
+		a:hover
+			text-decoration: none
+		.row
+			margin-top: -15px
+.reviews
+	background: #fff
+	height: 432px
+	text-align: center
+	h3
+		padding-top: 75px 
+		font-family: "Montserrat-Black", Arial
+		font-size: 32px
+		color: #222328
+	span
+		color: #b9bed1
+		font-family: "CrimsonText-Italic"
+		font-size: 16px
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0 auto
+		float: none
+		margin-top: 50px
+		text-align: left
+	li
+		padding: 0 35px
+		span
+			font-size: 14px
+			color: #3a405b
+			font-family: $default-font
+		b
+			font-size: 14px
+			font-family: "CrimsonText-Italic", Arial
+			color: #b9bed1
+
+	img
+		border-radius: 50%
+		margin-top: 10px
+		vertical-align: top
+	.header
+		float: left
+		.textHead
+			float: right
+			margin: 10px 4px
+	p
+		display: inline-block
+		margin-top: 25px
+		font-family: "CrimsonText-Roman"
+		font-size: 16px
+		color: #3a405b
+		line-height: 24px
+footer
+	background: #222328
+	ul
+		list-style: none
+.footer
+	min-height: 280px
+	text-align: center
+	a
+		display: block
+		float: left
+	ul.FootMenu
+		list-style: none
+		display: inline-block
+		li
+			float: left
+		a
+			font-size: 12px
+			color: #fff
+			padding: 0 20px
+			font-family: $default-font
+
+	.center
+		margin: 0 auto
+		float: none
+	.center:nth-of-type(1)
+		margin-top: 60px
+		padding-bottom: 65px
+		border-bottom: 1px solid #2d2e33
+	ul:nth-of-type(2)
+		float: right
+		li:nth-of-type(2) a
+			background-position: 24px 0
+			width: 24px
+		li:nth-of-type(3) a
+			background-position: 61px 0
+	.social li
+		float: left
+		margin: 0 10px
+		a
+			width: 19px
+			height: 21px
+			background-image: url("../img/HomePage/Footer/SocialSprite.png")
+			background-repeat-y: no-repeat
+		&:hover
+			opacity: .7
+.center:nth-of-type(2)
+	text-align: left
+	span, em
+		color: #7a7a7c
+		display: inline-block
+		margin-top: 63px
+	em
+		font-family: "CrimsonText-Italic", Arial
+		font-size: 14px
+		width: 36.6%
+	i
+		float: right
+		color: #7a7a7c
+		padding-right: 20px
+		font-size: 11px
+		font-style: normal
+		text-transform: uppercase
+		span
+			padding-left: 20px
+
+//Registration Form
+.login-form//if user want to sign in, make it visible
+				display: none
+				border: 3px solid #000
+				width: 280px
+				min-height: 90px
+				position: fixed
+				top: 0
+				right: 0
+				z-index: 7000
+				background: #1c1e23
+				border-radius: 4px
+				padding-top: 20px
+				fieldset
+					max-width: 80%
+					margin: 0 auto
+					label
+						font-size: 14px
+						color: #f5f5f5
+					h2
+						color: #fff
+						text-align: center
+						text-transform: uppercase
+					.registerWrap//if user click Register, make visible 
+						display: none
+//cart
+.cartBg
+	position: relative
+	//border-radius: 10px 10px 0px 0px
+	//border: 1px solid #f0f2f7 
+	border-bottom: none
+	&:hover 
+		.cart
+			display: block
+
+.cart
+	width: 243px
+	min-height: 40px
+	position: absolute
+	background: #fff
+	border-radius: 0px 10px 10px 10px
+	border: 1px solid #e3e8f0
+	border-radius: 15px
+	z-index: 6000
+	display: none
+	.CartPreview
+		width: 80%
+		margin: 0 auto
+		.Heads
+			text-transform: uppercase
+		.itText
+			float: right
+		.ItemCP
+			margin: 10px 0
+			border-bottom: 2px solid #e3e8f0
+			padding-bottom: 15px
+		.StyleCP
+			color: #b8bfd3
+		.PriceCP
+			color: #343e5c
+	.cat
+		cursor: pointer
+		display: block
+	.cat:hover
+		.StyleCP
+			color: #000
+.catfooter
+	width: 100%
+	min-height: 35px
+	border-radius: 0px 0px 10px 10px
+	font-size: 13px
+	color: #000
+	.Heads
+		float: left
+		margin-left: 25px
+		margin-top: 6px
+	.totalPrice
+		float: right
+		margin-right: 25px
+		margin-top: 6px
+.toCart
+	position: absolute
+	background: #000
+	width: 80px
+	height: 30px
+	line-height: 30px
+	border-radius: 0px 7px 0px 10px
+	background: #000
+	right: 0
+	color: #fff
+	font-weight: bold
+	transition: margin-right .6s ease-in-out
+	margin-right: -80px
+	text-align: center
+.Content li:hover .toCart, .Best-Sellers li:hover .toCart
+	margin-right: 0
+.toCart:hover
+	opacity: .8
+	transition: all .4s linear
+	text-decoration: underline
+	height: 35px
+	width: 100px
+	line-height: 35px
+.toCart:active
+	transform: rotateX(360deg)
+	transition: all .1s
+	text-decoration: none
+	color: #bbb
+.Content li a p i 
+	text-align: center
+	em
+		color: #000
+
+.ItemClass2 em::before
+	color: #6d6b68
+
+
+
+
+				
+				
+
+
+
+
+
+
+
+
+@import "media" // Всегда в конце
